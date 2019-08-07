@@ -14,12 +14,13 @@
   import Header from '@editorjs/header';
   import ImageTool from '@editorjs/image';
   import Embed from '@editorjs/embed';
+  import {INullable} from "@/@types/utility";
 
   @Component({
     name: 'Editor',
   })
   export default class Editor extends Vue {
-    test: EditorJS;
+    test: INullable<EditorJS>;
 
     constructor() {
       super();
@@ -54,11 +55,12 @@
     @Prop() private msg!: string;
 
     onSaveHandler(): void {
-      console.log(123);
-      this.test.save()
-        .then(res => {
-          console.log(res);
-        })
+      if (this.test) {
+        this.test.save()
+          .then(res => {
+            console.log(res);
+          })
+      }
     }
   }
 </script>
