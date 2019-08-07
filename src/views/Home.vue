@@ -1,12 +1,17 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <editor />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Editor from '@/components/Editor.vue';
 
-@Component
+@Component({
+  components: {
+    Editor
+  }
+})
 export default class Home extends Vue {}
 </script>
