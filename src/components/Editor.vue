@@ -58,6 +58,8 @@
       if (this.test) {
         this.test.save()
           .then(res => {
+            alert("콘솔창 열어보면 JSON 형태로 볼수 있삼");
+            console.log(res);
             this.$emit('onSaveHandler', JSON.stringify(res));
           })
       }
