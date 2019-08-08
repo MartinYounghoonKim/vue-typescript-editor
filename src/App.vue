@@ -6,15 +6,20 @@
 </template>
 
 <style lang="scss">
-  @import './styles/index';
-
+  html, body {
+    height: 100%;
+    background-color: #f2f3f8;
+  }
   #app {
+    height: 100%;
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    padding: 65px 0 0;
     text-align: center;
     color: #2c3e50;
-    padding: 65px 0 0;
+
+
   }
 
 </style>

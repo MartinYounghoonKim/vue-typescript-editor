@@ -8,13 +8,13 @@
 </template>
 
 <script lang="ts">
-  import {Component, Prop, Vue} from 'vue-property-decorator';
+  import { Component, Prop, Vue } from 'vue-property-decorator';
   import EditorJS from '@editorjs/editorjs';
   import List from '@editorjs/list';
   import Header from '@editorjs/header';
   import ImageTool from '@editorjs/image';
   import Embed from '@editorjs/embed';
-  import {INullable} from "@/@types/utility";
+  import { INullable } from "@/@types/utility";
 
   @Component({
     name: 'Editor',
@@ -58,7 +58,7 @@
       if (this.test) {
         this.test.save()
           .then(res => {
-            console.log(res);
+            this.$emit('onSaveHandler', JSON.stringify(res));
           })
       }
     }
@@ -68,11 +68,6 @@
 <style scoped lang="scss">
   .editor {
     text-align: left;
-    border: 1px solid gray;
-    height: 1000px;
-    textarea {
-      width: 100%;
-      height: 100%;
-    }
+    height: 100%;
   }
 </style>
